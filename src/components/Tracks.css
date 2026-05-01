@@ -1,0 +1,190 @@
+.tracks-section {
+  background: var(--bg-dark);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 0.8rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.section-sub {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.track-card {
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.6s ease both;
+}
+
+.track-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.track-cover {
+  position: relative;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.track-cover-pattern {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.03) 0px,
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 20px
+  );
+}
+
+.track-play-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(10, 10, 12, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+.track-play-btn:hover,
+.track-play-btn.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 42, 95, 0.5);
+}
+
+.track-info {
+  padding: 1.2rem;
+}
+
+.track-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.track-genre {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-primary);
+}
+
+.track-bpm {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.track-like-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  padding: 0.2rem;
+  border-radius: 50%;
+  transition: color 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.track-like-btn:hover {
+  color: #ff2a5f;
+  transform: scale(1.2);
+}
+
+.track-like-btn.liked {
+  color: #ff2a5f;
+  animation: heartPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes heartPop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+.track-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.mini-waveform {
+  display: flex;
+  align-items: flex-end;
+  height: 32px;
+  gap: 2px;
+  margin-bottom: 0.8rem;
+  opacity: 0.6;
+}
+
+.wave-bar {
+  flex: 1;
+  border-radius: 2px 2px 0 0;
+  min-height: 15%;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.track-card:hover .wave-bar {
+  opacity: 1;
+}
+
+.track-meta-bottom {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.track-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.tracks-footer {
+  text-align: center;
+  margin-top: 3rem;
+}

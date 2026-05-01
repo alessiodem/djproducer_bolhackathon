@@ -1,0 +1,136 @@
+/* ── Mode Switch ─────────────────────────────────────────────── */
+.mode-switch-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  user-select: none;
+}
+
+.mode-label {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.4s ease, opacity 0.4s ease;
+  white-space: nowrap;
+}
+
+.mode-label.dj {
+  color: var(--accent-primary);
+  opacity: 1;
+}
+.mode-label.dj.inactive {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.mode-label.listener {
+  color: var(--accent-secondary);
+  opacity: 1;
+}
+.mode-label.listener.inactive {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* The pill track */
+.mode-track {
+  position: relative;
+  width: 52px;
+  height: 28px;
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mode-track.dj-active {
+  background: rgba(255, 42, 95, 0.15);
+  border-color: rgba(255, 42, 95, 0.35);
+  box-shadow: 0 0 12px rgba(255, 42, 95, 0.25);
+}
+
+.mode-track.listener-active {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+}
+
+/* Hidden native checkbox */
+.mode-track input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* The thumb */
+.mode-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gradient-main);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background 0.4s ease,
+              box-shadow 0.4s ease;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(255, 42, 95, 0.5);
+}
+
+.mode-track.listener-active .mode-thumb {
+  transform: translateX(24px);
+  background: linear-gradient(135deg, #00f0ff 0%, #8a2be2 100%);
+  box-shadow: 0 2px 8px rgba(0, 240, 255, 0.5);
+}
+
+/* Mode banner (full-width notification below navbar) */
+.mode-banner {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  animation: bannerSlide 0.4s ease forwards;
+  pointer-events: none;
+}
+
+.mode-banner.dj {
+  background: linear-gradient(90deg, rgba(255,42,95,0.18) 0%, rgba(138,43,226,0.12) 100%);
+  border-bottom: 1px solid rgba(255, 42, 95, 0.2);
+  color: var(--accent-primary);
+}
+
+.mode-banner.listener {
+  background: linear-gradient(90deg, rgba(0,240,255,0.12) 0%, rgba(138,43,226,0.1) 100%);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+  color: var(--accent-secondary);
+}
+
+@keyframes bannerSlide {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .mode-label {
+    display: none;
+  }
+}
