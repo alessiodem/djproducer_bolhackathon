@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="container navbar-container">
         <a href="#" className="logo">
           <Music className="logo-icon" />
-          <span className="logo-text">DJ <span className="text-gradient">SYNC</span></span>
+          <span className="logo-text">DJ <span className="text-gradient">4 GAYS</span></span>
         </a>
 
         <nav className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
