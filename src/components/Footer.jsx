@@ -10,7 +10,7 @@ const Footer = () => (
         <div className="footer-brand">
           <div className="logo" style={{ marginBottom: '1rem' }}>
             <Music className="logo-icon" />
-            <span className="logo-text">DJ <span className="text-gradient">SYNC</span></span>
+            <span className="logo-text">DJ <span className="text-gradient">4 GAYS</span></span>
           </div>
           <p className="footer-tagline">
             Crafting electronic experiences that move minds, bodies, and souls.
@@ -46,7 +46,7 @@ const Footer = () => (
           <ul>
             <li>
               <Mail size={14} />
-              <a href="mailto:booking@djsync.com">booking@djsync.com</a>
+              <a href="mailto:booking@dj4gays.com">booking@dj4gays.com</a>
             </li>
             <li>
               <MapPin size={14} />
@@ -58,7 +58,7 @@ const Footer = () => (
 
       <div className="footer-bottom">
         <p className="footer-copy">
-          &copy; {new Date().getFullYear()} DJ SYNC. All rights reserved.
+          &copy; {new Date().getFullYear()} DJ . All rights reserved.
         </p>
         <p className="footer-copy" style={{ opacity: 0.4 }}>
           Designed with ♥ for the dancefloor.

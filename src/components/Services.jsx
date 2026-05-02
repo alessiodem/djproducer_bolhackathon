@@ -8,7 +8,7 @@ const djServices = [
   {
     id: 'club-dj',
     icon: <Headphones size={28} />,
-    title: 'Club DJ Sets',
+    title: 'Club DJ Sets for GAYS',
     description:
       'High-energy sets crafted for clubs, festivals, and private events. From intimate venues to massive stages.',
     features: ['4–6 hour sets', 'Custom playlist curation', 'Technical rider included'],
@@ -70,7 +70,7 @@ const listenerHighlights = [
 const upcomingShows = [
   { date: 'Jun 14', venue: 'Fabric London', city: 'London, UK' },
   { date: 'Jun 28', venue: 'Tresor', city: 'Berlin, DE' },
-  { date: 'Jul 5',  venue: 'Robert Johnson', city: 'Offenbach, DE' },
+  { date: 'Jul 5', venue: 'Robert Johnson', city: 'Offenbach, DE' },
   { date: 'Jul 19', venue: 'Output', city: 'New York, US' },
 ];
 
@@ -141,7 +141,7 @@ const Services = () => {
               </h2>
             </div>
             <a
-              href="mailto:booking@djsync.com"
+              href="mailto:booking@dj4gays.com"
               className="btn btn-primary"
             >
               {isDJMode
@@ -160,7 +160,7 @@ const Services = () => {
                   <p className="show-city">{show.city}</p>
                 </div>
                 <a
-                  href="mailto:booking@djsync.com"
+                  href="mailto:booking@dj4gays.com"
                   className="btn btn-outline show-btn"
                 >
                   {isDJMode ? 'Details' : 'Tickets'}
